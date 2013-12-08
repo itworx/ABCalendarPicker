@@ -754,8 +754,20 @@
 
 - (void)updateArrowsForProvider:(id<ABCalendarPickerDateProviderProtocol>)provider
 {
-    self.longLeftArrow.hidden = [provider dateForLongPrevAnimation] == nil;
-    self.longRightArrow.hidden = [provider dateForLongNextAnimation] == nil;
+    if ([(id)provider respondsToSelector:@selector(dateForLongPrevAnimation)]){
+        self.longLeftArrow.hidden = [provider dateForLongPrevAnimation] == nil;
+    }
+    else {
+        self.longLeftArrow.hidden = ![(id)provider respondsToSelector:@selector(dateForLongPrevAnimation)];
+    }
+    
+    if ([(id)provider respondsToSelector:@selector(dateForLongNextAnimation)]){
+        self.longRightArrow.hidden = [provider dateForLongNextAnimation] == nil;
+    }
+    else {
+        self.longRightArrow.hidden = ![(id)provider respondsToSelector:@selector(dateForLongNextAnimation)];
+    }
+    
     
     if ([provider animationForPrev] == ABCalendarPickerAnimationScrollUp)
         [self.leftArrow setTitle:UP_ARROW_STRING forState:UIControlStateNormal];
