@@ -227,7 +227,8 @@
     [titleColor set];
     CGContextSetShadowWithColor(UIGraphicsGetCurrentContext(), titleShadowOffset, 0.0, titleShadowColor.CGColor);
     
-    [titleText drawAtPoint:titlePoint withFont:titleFont];
+    //[titleText drawAtPoint:titlePoint withFont:titleFont];
+    [titleText drawInRect:CGRectMake(titlePoint.x, titlePoint.y-8, titleSize.width, titleSize.height+20) withFont:titleFont];
     if (self.numberOfDots > 0)
         [dotsText drawAtPoint:dotsPoint withFont:dotsFont];
 }

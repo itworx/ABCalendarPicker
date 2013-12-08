@@ -116,7 +116,7 @@
 - (UIFont *)tileTitleFont
 {
     if (_tileTitleFont == nil)
-        _tileTitleFont = [UIFont boldSystemFontOfSize:24.0];
+        _tileTitleFont = [UIFont boldSystemFontOfSize:12.0];
     return _tileTitleFont;
 }
 
