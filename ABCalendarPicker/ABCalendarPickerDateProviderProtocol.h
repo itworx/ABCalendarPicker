@@ -77,6 +77,7 @@ typedef enum {
 
 - (NSDate*)dateForRow:(NSInteger)row andColumn:(NSInteger)column;
 - (NSString*)labelForDate:(NSDate*)date;
+- (NSString*)labelForDate:(NSDate*)date andColumn:(NSInteger)column;
 - (UIControlState)controlStateForDate:(NSDate*)date;
 - (NSString*)labelForRow:(NSInteger)row andColumn:(NSInteger)column;
 - (UIControlState)controlStateForRow:(NSInteger)row andColumn:(NSInteger)column;

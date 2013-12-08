@@ -863,7 +863,15 @@
         for (int j = 0; j < columnsCount; j++)
         {
             NSDate * buttonDate = [provider dateForRow:i andColumn:j];
-            NSString * label = [provider labelForDate:buttonDate];
+
+            NSString * label;
+            if([(id)provider respondsToSelector:@selector(labelForDate:andColumn:)]) {
+                label = [provider labelForDate:buttonDate andColumn:j];
+            }
+            else {
+                label = [provider labelForDate:buttonDate];
+            }
+            
             UIControlState controlState = [provider controlStateForDate:buttonDate];
             
             UIControl * control = [self.styleProvider calendarPicker:self cellViewForTitle:label andState:self.currentState];

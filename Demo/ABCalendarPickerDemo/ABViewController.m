@@ -16,10 +16,10 @@
 
 
 @implementation ABCalendarPickerDefaultTeacherKitDaysProvider
-- (NSString*)labelForDate:(NSDate*)date
+- (NSString*)labelForDate:(NSDate*)date andColumn:(NSInteger)column
 {
     NSUInteger day = [self.calendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
-    return [NSString stringWithFormat:@"%@\n%i", [self columnName:day], day, nil];
+    return [NSString stringWithFormat:@"%@\n%i", [self columnName:column], day, nil];
 }
 -(NSDate*)dateForLongPrevAnimation
 {
@@ -37,10 +37,10 @@
 
 
 @implementation ABCalendarPickerDefaultTeacherKitWeekDaysProvider
-- (NSString*)labelForDate:(NSDate*)date
+- (NSString*)labelForDate:(NSDate*)date andColumn:(NSInteger)column
 {
     NSUInteger day = [self.calendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
-    return [NSString stringWithFormat:@"%@\n%i", [self columnName:day], day, nil];
+    return [NSString stringWithFormat:@"%@\n%i", [self columnName:column], day, nil];
 }
 -(NSDate*)dateForLongPrevAnimation
 {
