@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13B990791854A1F8004DF8C1 /* ABCalendarPickerDefaultTeacherKitWeekdaysProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B990781854A1F8004DF8C1 /* ABCalendarPickerDefaultTeacherKitWeekdaysProvider.m */; };
+		13B990801854A220004DF8C1 /* ABCalendarPickerDefaultTeacherKitDaysProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B9907F1854A220004DF8C1 /* ABCalendarPickerDefaultTeacherKitDaysProvider.m */; };
 		254756D916D33DE600CDD004 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254756D816D33DE600CDD004 /* UIKit.framework */; };
 		254756DB16D33DE600CDD004 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254756DA16D33DE600CDD004 /* Foundation.framework */; };
 		254756DD16D33DE600CDD004 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254756DC16D33DE600CDD004 /* CoreGraphics.framework */; };
@@ -49,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13B990771854A1F8004DF8C1 /* ABCalendarPickerDefaultTeacherKitWeekdaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultTeacherKitWeekdaysProvider.h; sourceTree = "<group>"; };
+		13B990781854A1F8004DF8C1 /* ABCalendarPickerDefaultTeacherKitWeekdaysProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultTeacherKitWeekdaysProvider.m; sourceTree = "<group>"; };
+		13B9907E1854A220004DF8C1 /* ABCalendarPickerDefaultTeacherKitDaysProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCalendarPickerDefaultTeacherKitDaysProvider.h; sourceTree = "<group>"; };
+		13B9907F1854A220004DF8C1 /* ABCalendarPickerDefaultTeacherKitDaysProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCalendarPickerDefaultTeacherKitDaysProvider.m; sourceTree = "<group>"; };
 		254756D516D33DE600CDD004 /* ABCalendarPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCalendarPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		254756D816D33DE600CDD004 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		254756DA16D33DE600CDD004 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -125,6 +131,10 @@
 				254756F316D33DE600CDD004 /* ABViewController.xib */,
 				2547570016D342BA00CDD004 /* Resources */,
 				254756DF16D33DE600CDD004 /* Supporting Files */,
+				13B990771854A1F8004DF8C1 /* ABCalendarPickerDefaultTeacherKitWeekdaysProvider.h */,
+				13B990781854A1F8004DF8C1 /* ABCalendarPickerDefaultTeacherKitWeekdaysProvider.m */,
+				13B9907E1854A220004DF8C1 /* ABCalendarPickerDefaultTeacherKitDaysProvider.h */,
+				13B9907F1854A220004DF8C1 /* ABCalendarPickerDefaultTeacherKitDaysProvider.m */,
 			);
 			path = ABCalendarPickerDemo;
 			sourceTree = "<group>";
@@ -261,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				254756E516D33DE600CDD004 /* main.m in Sources */,
+				13B990801854A220004DF8C1 /* ABCalendarPickerDefaultTeacherKitDaysProvider.m in Sources */,
 				254756E916D33DE600CDD004 /* ABAppDelegate.m in Sources */,
+				13B990791854A1F8004DF8C1 /* ABCalendarPickerDefaultTeacherKitWeekdaysProvider.m in Sources */,
 				254756F216D33DE600CDD004 /* ABViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,56 +9,8 @@
 #import <EventKit/EventKit.h>
 #import <ABCalendarPicker/ABCalendarPicker.h>
 #import "ABViewController.h"
-
-@interface ABCalendarPickerDefaultTeacherKitDaysProvider : ABCalendarPickerDefaultDaysProvider
-
-@end
-
-
-@implementation ABCalendarPickerDefaultTeacherKitDaysProvider
-- (NSString*)labelForDate:(NSDate*)date andColumn:(NSInteger)column
-{
-    NSUInteger day = [self.calendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
-    return [NSString stringWithFormat:@"%@\n%i", [self columnName:column], day, nil];
-}
--(NSDate*)dateForLongPrevAnimation
-{
-    return nil;
-}
--(NSDate*)dateForLongNextAnimation
-{
-    return nil;
-}
--(BOOL)navigateBetweenMonthsAndWeeksOnly
-{
-    return YES;
-}
-@end
-
-@interface ABCalendarPickerDefaultTeacherKitWeekDaysProvider : ABCalendarPickerDefaultWeekdaysProvider
-
-@end
-
-
-@implementation ABCalendarPickerDefaultTeacherKitWeekDaysProvider
-- (NSString*)labelForDate:(NSDate*)date andColumn:(NSInteger)column
-{
-    NSUInteger day = [self.calendar ordinalityOfUnit:NSDayCalendarUnit inUnit:NSMonthCalendarUnit forDate:date];
-    return [NSString stringWithFormat:@"%@\n%i", [self columnName:column], day, nil];
-}
--(NSDate*)dateForLongPrevAnimation
-{
-    return nil;
-}
--(NSDate*)dateForLongNextAnimation
-{
-    return nil;
-}
--(BOOL)navigateBetweenMonthsAndWeeksOnly
-{
-    return YES;
-}
-@end
+#import "ABCalendarPickerDefaultTeacherKitDaysProvider.h"
+#import "ABCalendarPickerDefaultTeacherKitWeekdaysProvider.h"
 
 @interface ABViewController () <ABCalendarPickerDelegateProtocol,ABCalendarPickerDataSourceProtocol>
 @property (assign, nonatomic) IBOutlet ABCalendarPicker *calendarPicker;
@@ -112,8 +64,9 @@
     
     self.calendarPicker.delegate = self;
     self.calendarPicker.dataSource = self;
+    
     [self.calendarPicker setDaysProvider:[[ABCalendarPickerDefaultTeacherKitDaysProvider alloc]init]];
-    [self.calendarPicker setWeekdaysProvider:[[ABCalendarPickerDefaultTeacherKitWeekDaysProvider alloc] init]];
+    [self.calendarPicker setWeekdaysProvider:[[ABCalendarPickerDefaultTeacherKitWeekdaysProvider alloc] init]];
     self.calendarPicker.calendar.firstWeekday = 1;
 }
 
