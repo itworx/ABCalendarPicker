@@ -29,6 +29,10 @@
 {
     return nil;
 }
+-(BOOL)navigateBetweenMonthsAndWeeksOnly
+{
+    return YES;
+}
 @end
 
 @interface ABCalendarPickerDefaultTeacherKitWeekDaysProvider : ABCalendarPickerDefaultWeekdaysProvider
@@ -49,6 +53,10 @@
 -(NSDate*)dateForLongNextAnimation
 {
     return nil;
+}
+-(BOOL)navigateBetweenMonthsAndWeeksOnly
+{
+    return YES;
 }
 @end
 
@@ -84,6 +92,16 @@
              withState:(ABCalendarPickerState)state
 {
     NSLog(@"%@",date);
+}
+
+- (void)calendarPicker:(ABCalendarPicker *)calendarPicker didNavigateToState:(ABCalendarPickerState)state
+{
+    if (state == ABCalendarPickerStateDays) {
+        NSLog(@"days");
+    }
+    else if(state == ABCalendarPickerStateWeekdays) {
+        NSLog(@"week days");
+    }
 }
 
 #pragma mark -

@@ -371,9 +371,15 @@
 
 - (void)titleClicked:(id)sender
 {
+    if (([((id)self.currentProvider) respondsToSelector:@selector(navigateBetweenMonthsAndWeeksOnly)] &&[self.currentProvider navigateBetweenMonthsAndWeeksOnly])) {
+        [self setState:self.currentState-1 animated:YES];
+    }
+    
     NSInteger index = [self.providers indexOfObject:self.currentProvider];
     if (index < self.providers.count-1 && [self.providers objectAtIndex:index+1] != nil)
         [self setState:self.currentState+1 animated:YES];
+    
+    [self.delegate calendarPicker:self didNavigateToState:self.currentState];
 }
 
 - (void)leftButtonClicked:(id)sender
