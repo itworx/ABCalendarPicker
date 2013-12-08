@@ -69,6 +69,7 @@ typedef enum {
 - (NSInteger)columnsCount;
 - (NSString*)columnName:(NSInteger)column;
 - (NSString*)titleText;
+- (BOOL)displayDaysOnTop;
 
 @optional
 - (NSDate *)mainDateBegin;

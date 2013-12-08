@@ -678,6 +678,9 @@
     self.columnLabels = [NSMutableArray array];
     for (int j = 0; j < columnsCount; j++)
     {
+        if (!([((id)provider) respondsToSelector:@selector(displayDaysOnTop)] &&[provider displayDaysOnTop])) {
+            continue;
+        }
         NSString * columnName = [provider columnName:j];
         if (columnName == nil)
             continue;
